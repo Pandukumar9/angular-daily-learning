@@ -1,0 +1,48 @@
+   <div class="container">
+      <h2 class="mb-4">Day 7 → Angular Material Form</h2>
+
+      <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+
+        <!-- Username -->
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Username</mat-label>
+          <input matInput formControlName="username" placeholder="Enter username">
+          <mat-error *ngIf="userForm.get('username')?.hasError('required')">
+            Username is <strong>required</strong>
+          </mat-error>
+          <mat-error *ngIf="userForm.get('username')?.hasError('minlength')">
+            Minimum 3 characters required
+          </mat-error>
+        </mat-form-field>
+
+        <!-- Email -->
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Email</mat-label>
+          <input matInput formControlName="email" placeholder="Enter email">
+          <mat-error *ngIf="userForm.get('email')?.hasError('required')">
+            Email is <strong>required</strong>
+          </mat-error>
+          <mat-error *ngIf="userForm.get('email')?.hasError('email')">
+            Please enter a valid email
+          </mat-error>
+        </mat-form-field>
+
+        <!-- Password -->
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Password</mat-label>
+          <input matInput type="password" formControlName="password" placeholder="Enter password">
+          <mat-error *ngIf="userForm.get('password')?.hasError('required')">
+            Password is <strong>required</strong>
+          </mat-error>
+          <mat-error *ngIf="userForm.get('password')?.hasError('minlength')">
+            Password must be at least 6 characters
+          </mat-error>
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" type="submit" [disabled]="userForm.invalid">
+          Submit
+        </button>
+      </form>
+
+      <pre class="mt-4">{{ userForm.value | json }}</pre>
+    </div>

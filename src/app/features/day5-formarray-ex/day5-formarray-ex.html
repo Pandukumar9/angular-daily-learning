@@ -1,1 +1,67 @@
-<p>day5-formarray-ex works!</p>
+<div class="container mt-4">
+  <h3 class="mb-4 text-primary">Day 5 → FormArray Example (Multiple Phone Numbers)</h3>
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" class="border p-4 rounded shadow-sm bg-light">
+    <!-- Name -->
+    <div class="mb-3">
+      <label class="form-label">Name</label>
+      <input
+        type="text"
+        class="form-control"
+        [ngClass]="{ 'is-invalid': f['name'].touched && f['name'].invalid }"
+        formControlName="name"
+        placeholder="Enter your name"
+      />
+      <div class="invalid-feedback">Name is required.</div>
+    </div>
+
+    <!-- Phones -->
+    <div formArrayName="phones" class="mb-3">
+      <label class="form-label">Phone Numbers</label>
+
+      <div *ngFor="let phone of phones.controls; let i = index" [formGroupName]="i" class="row g-2 mb-2">
+        <!-- Type -->
+        <div class="col-md-4">
+          <select
+            class="form-select"
+            [ngClass]="{ 'is-invalid': phone.get('type')?.touched && phone.get('type')?.invalid }"
+            formControlName="type"
+          >
+            <option value="">Select type</option>
+            <option value="Home">Home</option>
+            <option value="Work">Work</option>
+            <option value="Mobile">Mobile</option>
+          </select>
+          <div class="invalid-feedback">Type is required.</div>
+        </div>
+
+        <!-- Number -->
+        <div class="col-md-6">
+          <input
+            type="text"
+            class="form-control"
+            [ngClass]="{ 'is-invalid': phone.get('number')?.touched && phone.get('number')?.invalid }"
+            formControlName="number"
+            placeholder="Enter phone number"
+          />
+          <div class="invalid-feedback">
+            Phone number must be 10 digits.
+          </div>
+        </div>
+
+        <!-- Remove Button -->
+        <div class="col-md-2">
+          <button type="button" class="btn btn-danger w-100" (click)="removePhone(i)" *ngIf="phones.length > 1">
+            Remove
+          </button>
+        </div>
+      </div>
+
+      <!-- Add Phone -->
+      <button type="button" class="btn btn-secondary mt-2" (click)="addPhone()">+ Add Phone</button>
+    </div>
+
+    <!-- Submit -->
+    <button type="submit" class="btn btn-success w-100 mt-3">Submit</button>
+  </form>
+</div>

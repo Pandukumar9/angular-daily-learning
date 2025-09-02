@@ -1,0 +1,55 @@
+<div class="container mt-4">
+  <h2 class="mb-3">User Registration</h2>
+
+  <!-- Reactive Form -->
+  <form [formGroup]="userForm" (ngSubmit)="onSubmit()" class="mb-4">
+    <div class="mb-3">
+      <label class="form-label">Username</label>
+      <input type="text" class="form-control" formControlName="username" />
+      <div class="text-danger" *ngIf="userForm.get('username')?.touched && userForm.get('username')?.invalid">
+        Username is required
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Email</label>
+      <input type="email" class="form-control" formControlName="email" />
+      <div class="text-danger" *ngIf="userForm.get('email')?.touched && userForm.get('email')?.invalid">
+        Valid email is required
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Mobile</label>
+      <input type="text" class="form-control" formControlName="mobile" />
+      <div class="text-danger" *ngIf="userForm.get('mobile')?.touched && userForm.get('mobile')?.invalid">
+        10-digit mobile number is required
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary" [disabled]="userForm.invalid">Submit</button>
+  </form>
+
+  <!-- User List -->
+  <h3>Users List</h3>
+  <table class="table table-bordered">
+    <thead class="table-light">
+      <tr>
+        <th>ID</th>
+        <th>Username</th>
+        <th>Email</th>
+        <th>Mobile</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (u of users; track u.id) {
+      <tr>
+        <td>{{ u.id }}</td>
+        <td>{{ u.username }}</td>
+        <td>{{ u.email }}</td>
+        <td>{{ u.mobile }}</td>
+      </tr>
+      }
+    </tbody>
+  </table>
+</div>
