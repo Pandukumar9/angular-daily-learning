@@ -1,0 +1,38 @@
+<mat-accordion>
+  <mat-expansion-panel *ngFor="let group of groupedUsers | keyvalue">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        {{ group.key }} ({{ group.value.length }} records)
+      </mat-panel-title>
+      <button mat-button color="primary" (click)="mergeDuplicates(group.key)" *ngIf="group.value.length > 1">
+        Merge
+      </button>
+    </mat-expansion-panel-header>
+
+    <!-- Duplicate Table -->
+    <table mat-table [dataSource]="group.value" class="mat-elevation-z8">
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef>ID</th>
+        <td mat-cell *matCellDef="let user">{{ user.id }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="username">
+        <th mat-header-cell *matHeaderCellDef>Username</th>
+        <td mat-cell *matCellDef="let user">{{ user.username }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="email">
+        <th mat-header-cell *matHeaderCellDef>Email</th>
+        <td mat-cell *matCellDef="let user">{{ user.email }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="mobile">
+        <th mat-header-cell *matHeaderCellDef>Mobile</th>
+        <td mat-cell *matCellDef="let user">{{ user.mobile }}</td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </mat-expansion-panel>
+</mat-accordion>

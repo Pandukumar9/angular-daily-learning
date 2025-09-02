@@ -26,11 +26,17 @@ userForm: FormGroup;
     this.loadUsers();
   }
 
-  loadUsers() {
-    this.userService.getUsers().subscribe((res:any) => {
+loadUsers() {
+  this.userService.getUsers().subscribe({
+    next: (res) => {
       this.users = res;
-    });
-  }
+      console.log('Users fetched:', this.users);
+    },
+    error: (err) => {
+      console.error('Error loading users', err);
+    }
+  });
+}
 
   onSubmit() {
     if (this.userForm.valid) {

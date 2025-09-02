@@ -56,5 +56,17 @@ export const routes: Routes = [
       import('./features/day9-employee-crud/day9-employee-crud')
         .then(m => m.Day9EmployeeCrud),
   },
+                  {
+    path: 'day10',
+    loadComponent: () =>
+      import('./features/day10-material-table/day10-material-table')
+        .then(m => m.Day10MaterialTable),
+  },
+                    {
+    path: 'day11',
+    loadComponent: () =>
+      import('./features/day11-accordion-table/day11-accordion-table')
+        .then(m => m.Day11AccordionTable),
+  },
   { path: '', redirectTo: 'day1', pathMatch: 'full' },
 ];

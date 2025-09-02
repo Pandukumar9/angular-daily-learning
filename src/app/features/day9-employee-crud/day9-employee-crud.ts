@@ -28,7 +28,15 @@ export class Day9EmployeeCrud implements OnInit {
   }
 
   loadEmployees() {
-    this.service.getEmployees().subscribe((res) => (this.employeesdata = res));
+  this.service.getEmployees().subscribe({
+    next: (res) => {
+      this.employeesdata = res;
+      console.log('Users fetched:', this.employeesdata);
+    },
+    error: (err) => {
+      console.error('Error loading users', err);
+    }
+  });
   }
 
   onSubmit() {
