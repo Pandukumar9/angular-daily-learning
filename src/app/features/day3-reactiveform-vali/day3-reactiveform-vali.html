@@ -1,0 +1,42 @@
+<div class="container mt-4">
+  <h3 class="mb-4 text-primary">Day 2 → Reactive Form with Validations</h3>
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" class="border p-4 rounded shadow-sm bg-light">
+    <!-- Username -->
+    <div class="mb-3">
+      <label class="form-label">Username</label>
+      <input
+        type="text"
+        class="form-control"
+        [ngClass]="{ 'is-invalid': f['username'].touched && f['username'].invalid }"
+        formControlName="username"
+        placeholder="Enter your username"
+      />
+      <div class="invalid-feedback">
+        <div *ngIf="f['username'].errors?.['required']">Username is required.</div>
+        <div *ngIf="f['username'].errors?.['minlength']">
+          Username must be at least 3 characters.
+        </div>
+      </div>
+    </div>
+
+    <!-- Email -->
+    <div class="mb-3">
+      <label class="form-label">Email</label>
+      <input
+        type="email"
+        class="form-control"
+        [ngClass]="{ 'is-invalid': f['email'].touched && f['email'].invalid }"
+        formControlName="email"
+        placeholder="Enter your email"
+      />
+      <div class="invalid-feedback">
+        <div *ngIf="f['email'].errors?.['required']">Email is required.</div>
+        <div *ngIf="f['email'].errors?.['email']">Enter a valid email address.</div>
+      </div>
+    </div>
+
+    <!-- Submit -->
+    <button type="submit" class="btn btn-success w-100">Submit</button>
+  </form>
+</div>

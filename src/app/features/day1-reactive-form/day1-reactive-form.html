@@ -1,0 +1,50 @@
+<div class="container mt-4">
+  <div class="card shadow-sm rounded-3">
+    <div class="card-header bg-primary text-white">
+      <h5 class="mb-0">Day 1 → Simple Reactive Form</h5>
+    </div>
+    <div class="card-body">
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+        <!-- Username -->
+        <div class="mb-3">
+          <label for="username" class="form-label">Username</label>
+          <input
+            type="text"
+            id="username"
+            formControlName="username"
+            class="form-control"
+            placeholder="Enter username"
+          />
+          <div *ngIf="username?.touched && username?.invalid" class="text-danger small">
+            <span *ngIf="username?.errors?.['required']">Username is required.</span>
+            <span *ngIf="username?.errors?.['minlength']">
+              Minimum 3 characters required.
+            </span>
+          </div>
+        </div>
+
+        <!-- Email -->
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input
+            type="email"
+            id="email"
+            formControlName="email"
+            class="form-control"
+            placeholder="Enter email"
+          />
+          <div *ngIf="email?.touched && email?.invalid" class="text-danger small">
+            <span *ngIf="email?.errors?.['required']">Email is required.</span>
+            <span *ngIf="email?.errors?.['email']">Enter a valid email address.</span>
+          </div>
+        </div>
+
+        <!-- Submit -->
+        <button type="submit" class="btn btn-success w-100">
+          Submit
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
