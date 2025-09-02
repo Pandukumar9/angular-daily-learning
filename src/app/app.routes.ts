@@ -68,5 +68,11 @@ export const routes: Routes = [
       import('./features/day11-accordion-table/day11-accordion-table')
         .then(m => m.Day11AccordionTable),
   },
+                      {
+    path: 'day12',
+    loadComponent: () =>
+      import('./features/day12-export-table/day12-export-table')
+        .then(m => m.Day12ExportTable),
+  },
   { path: '', redirectTo: 'day1', pathMatch: 'full' },
 ];
