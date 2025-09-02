@@ -74,5 +74,23 @@ export const routes: Routes = [
       import('./features/day12-export-table/day12-export-table')
         .then(m => m.Day12ExportTable),
   },
+                        {
+    path: 'day13',
+    loadComponent: () =>
+      import('./features/day13-search-filter/day13-search-filter')
+        .then(m => m.Day13SearchFilter),
+  },
+                          {
+    path: 'day14',
+    loadComponent: () =>
+      import('./features/day14-employee-table/day14-employee-table')
+        .then(m => m.Day14EmployeeTable),
+  },
+                            {
+    path: 'day15',
+    loadComponent: () =>
+      import('./features/day15-student-table/day15-student-table')
+        .then(m => m.Day15StudentTable),
+  },
   { path: '', redirectTo: 'day1', pathMatch: 'full' },
 ];

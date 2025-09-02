@@ -1,0 +1,87 @@
+<div class="p-3">
+  <!-- 🔍 Global Search -->
+  <mat-form-field appearance="outline" class="w-100 mb-3">
+    <mat-label>Search All</mat-label>
+    <input
+      matInput
+      (keyup)="applyFilter($event)"
+      placeholder="Search users"
+    />
+  </mat-form-field>
+
+  <!-- 📋 Table -->
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 w-100">
+
+    <!-- ID Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef>
+        ID
+        <br />
+        <mat-form-field appearance="outline" class="w-100">
+          <input
+            matInput
+            placeholder="Filter"
+            [(ngModel)]="columnFilters.id"
+            (keyup)="applyColumnFilter()"
+          />
+        </mat-form-field>
+      </th>
+      <td mat-cell *matCellDef="let element">{{ element.id }}</td>
+    </ng-container>
+
+    <!-- Username Column -->
+    <ng-container matColumnDef="username">
+      <th mat-header-cell *matHeaderCellDef>
+        Username
+        <br />
+        <mat-form-field appearance="outline" class="w-100">
+          <input
+            matInput
+            placeholder="Filter"
+            [(ngModel)]="columnFilters.username"
+            (keyup)="applyColumnFilter()"
+          />
+        </mat-form-field>
+      </th>
+      <td mat-cell *matCellDef="let element">{{ element.username }}</td>
+    </ng-container>
+
+    <!-- Email Column -->
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef>
+        Email
+        <br />
+        <mat-form-field appearance="outline" class="w-100">
+          <input
+            matInput
+            placeholder="Filter"
+            [(ngModel)]="columnFilters.email"
+            (keyup)="applyColumnFilter()"
+          />
+        </mat-form-field>
+      </th>
+      <td mat-cell *matCellDef="let element">{{ element.email }}</td>
+    </ng-container>
+
+    <!-- Mobile Column -->
+    <ng-container matColumnDef="mobile">
+      <th mat-header-cell *matHeaderCellDef>
+        Mobile
+        <br />
+        <mat-form-field appearance="outline" class="w-100">
+          <input
+            matInput
+            placeholder="Filter"
+            [(ngModel)]="columnFilters.mobile"
+            (keyup)="applyColumnFilter()"
+          />
+        </mat-form-field>
+      </th>
+      <td mat-cell *matCellDef="let element">{{ element.mobile }}</td>
+    </ng-container>
+
+    <!-- Header + Row -->
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+</div>

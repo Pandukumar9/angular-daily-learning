@@ -14,5 +14,133 @@
       "mobile": "2222222222",
       "id": "fff1"
     }
+  ],
+  "students": [
+    {
+      "id": "2",
+      "name": "Priya Sharma",
+      "rollNumber": "STU102",
+      "email": "priya.sharma@example.com",
+      "mobile": "9876501234",
+      "branch": "ECE",
+      "year": "2nd"
+    },
+    {
+      "id": "3",
+      "name": "Ravi Teja",
+      "rollNumber": "STU103",
+      "email": "ravi.teja@example.com",
+      "mobile": "9876512345",
+      "branch": "EEE",
+      "year": "4th"
+    },
+    {
+      "id": "4",
+      "name": "Sneha Reddy",
+      "rollNumber": "STU104",
+      "email": "sneha.reddy@example.com",
+      "mobile": "9876523456",
+      "branch": "IT",
+      "year": "1st"
+    },
+    {
+      "id": "5",
+      "name": "Vikram Singh",
+      "rollNumber": "STU105",
+      "email": "vikram.singh@example.com",
+      "mobile": "9876534567",
+      "branch": "Mechanical",
+      "year": "3rd"
+    },
+    {
+      "id": "6",
+      "name": "Anjali Gupta",
+      "rollNumber": "STU106",
+      "email": "anjali.gupta@example.com",
+      "mobile": "9876545678",
+      "branch": "Civil",
+      "year": "2nd"
+    },
+    {
+      "id": "7",
+      "name": "Rajesh Yadav",
+      "rollNumber": "STU107",
+      "email": "rajesh.yadav@example.com",
+      "mobile": "9876556789",
+      "branch": "CSE",
+      "year": "4th"
+    },
+    {
+      "id": "8",
+      "name": "Divya Mehta",
+      "rollNumber": "STU108",
+      "email": "divya.mehta@example.com",
+      "mobile": "9876567890",
+      "branch": "ECE",
+      "year": "1st"
+    },
+    {
+      "id": "9",
+      "name": "Suresh Kumar",
+      "rollNumber": "STU109",
+      "email": "suresh.kumar@example.com",
+      "mobile": "9876578901",
+      "branch": "IT",
+      "year": "3rd"
+    },
+    {
+      "id": "10",
+      "name": "Neha Verma",
+      "rollNumber": "STU110",
+      "email": "neha.verma@example.com",
+      "mobile": "9876589012",
+      "branch": "EEE",
+      "year": "2nd"
+    },
+    {
+      "id": "11",
+      "name": "Kiran Reddy",
+      "rollNumber": "STU111",
+      "email": "kiran.reddy@example.com",
+      "mobile": "9876590123",
+      "branch": "Mechanical",
+      "year": "4th"
+    },
+    {
+      "id": "12",
+      "name": "Pooja Nair",
+      "rollNumber": "STU112",
+      "email": "pooja.nair@example.com",
+      "mobile": "9876601234",
+      "branch": "Civil",
+      "year": "1st"
+    },
+    {
+      "id": "13",
+      "name": "Manoj Das",
+      "rollNumber": "STU113",
+      "email": "manoj.das@example.com",
+      "mobile": "9876612345",
+      "branch": "CSE",
+      "year": "2nd"
+    },
+    {
+      "id": "14",
+      "name": "Ritika Sen",
+      "rollNumber": "STU114",
+      "email": "ritika.sen@example.com",
+      "mobile": "9876623456",
+      "branch": "IT",
+      "year": "3rd"
+    },
+    {
+      "id": "15",
+      "name": "Arjun Patil",
+      "rollNumber": "STU115",
+      "email": "arjun.patil@example.com",
+      "mobile": "9876634567",
+      "branch": "ECE",
+      "year": "4th"
+    }
   ]
 }

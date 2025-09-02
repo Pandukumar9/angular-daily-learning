@@ -1,0 +1,53 @@
+<div class="container mt-3">
+  <h2 class="mb-3" (click)="loadStudents()">Student Management</h2>
+
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <!-- ID -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> ID </th>
+      <td mat-cell *matCellDef="let student"> {{student.id}} </td>
+    </ng-container>
+
+    <!-- Name -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Name </th>
+      <td mat-cell *matCellDef="let student"> {{student.name}} </td>
+    </ng-container>
+
+    <!-- Email -->
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef> Email </th>
+      <td mat-cell *matCellDef="let student"> {{student.email}} </td>
+    </ng-container>
+
+    <!-- Mobile -->
+    <ng-container matColumnDef="mobile">
+      <th mat-header-cell *matHeaderCellDef> Mobile </th>
+      <td mat-cell *matCellDef="let student"> {{student.mobile}} </td>
+    </ng-container>
+
+    <!-- Branch -->
+    <ng-container matColumnDef="branch">
+      <th mat-header-cell *matHeaderCellDef> Branch </th>
+      <td mat-cell *matCellDef="let student"> {{student.branch}} </td>
+    </ng-container>
+
+    <!-- Year -->
+    <ng-container matColumnDef="year">
+      <th mat-header-cell *matHeaderCellDef> Year </th>
+      <td mat-cell *matCellDef="let student"> {{student.year}} </td>
+    </ng-container>
+
+    <!-- Actions -->
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef> Actions </th>
+      <td mat-cell *matCellDef="let student">
+        <button mat-raised-button color="warn" (click)="deleteStudent(student.id)">Delete</button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>
