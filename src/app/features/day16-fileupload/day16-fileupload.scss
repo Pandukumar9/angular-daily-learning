@@ -1,0 +1,17 @@
+.drop-zone {
+  border: 2px dashed #aaa;
+  background: #f8f9fa;
+  transition: background 0.3s ease;
+  cursor: pointer;
+}
+.drop-zone.active {
+  background: #e9f5ff;
+  border-color: #0d6efd;
+}
+.modal.d-block {
+  display: block;
+  background: rgba(0,0,0,0.5);
+}
+.progress-bar {
+  font-size: 12px;
+}

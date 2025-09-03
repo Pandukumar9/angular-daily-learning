@@ -92,5 +92,17 @@ export const routes: Routes = [
       import('./features/day15-student-table/day15-student-table')
         .then(m => m.Day15StudentTable),
   },
+                              {
+    path: 'day16',
+    loadComponent: () =>
+      import('./features/day16-fileupload/day16-fileupload')
+        .then(m => m.Day16Fileupload),
+  },
+                                {
+    path: 'day17',
+    loadComponent: () =>
+      import('./features/day17-multifile-upload/day17-multifile-upload')
+        .then(m => m.Day17MultifileUpload),
+  },
   { path: '', redirectTo: 'day1', pathMatch: 'full' },
 ];
