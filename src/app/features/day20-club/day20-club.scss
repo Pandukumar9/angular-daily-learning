@@ -1,0 +1,113 @@
+.club-section {
+  padding: 2rem;
+  background: #f8f9fa;
+  border-radius: 12px;
+  max-width: 900px;
+  margin: 2rem auto;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+.club-title {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #2c3e50;
+  text-align: center;
+}
+.club-form {
+  margin-bottom: 2rem;
+}
+.form-row {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 1rem;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.form-group label {
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: #34495e;
+}
+.form-group input[type="text"],
+.form-group input[type="number"] {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+.form-group input[type="file"] {
+  margin-top: 0.5rem;
+}
+.submit-group {
+  display: flex;
+  align-items: flex-end;
+}
+.submit-group button {
+  padding: 0.7rem 1.5rem;
+  background: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.submit-group button:hover {
+  background: #0056b3;
+}
+.club-list {
+  list-style: none;
+  padding: 0;
+}
+.club-item {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  margin-bottom: 1rem;
+  padding: 1rem;
+}
+.club-logo {
+  border-radius: 50%;
+  margin-right: 16px;
+  width: 48px;
+  height: 48px;
+  object-fit: cover;
+  border: 2px solid #007bff;
+}
+.club-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.club-name {
+  font-weight: 600;
+  color: #007bff;
+  font-size: 1.1rem;
+}
+.club-desc {
+  color: #2c3e50;
+  font-size: 1rem;
+}
+.club-members {
+  color: #555;
+  font-size: 0.95rem;
+  margin-top: 2px;
+}
+.club-delete {
+  margin-left: 1rem;
+  background: #e74c3c;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.2s;
+}
+.club-delete:hover {
+  background: #c0392b;
+}

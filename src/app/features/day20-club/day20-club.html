@@ -1,0 +1,59 @@
+
+<section class="club-section">
+  <h2 class="club-title mb-4"><span class="material-icons align-middle me-2">groups</span> Day 20 Club Management</h2>
+  <form class="club-form card shadow-sm p-4 mb-4" [formGroup]="clubForm" (ngSubmit)="onAddClub()">
+    <div class="row g-3">
+      <div class="col-md-4">
+        <label class="form-label">Club Name</label>
+        <input type="text" class="form-control" formControlName="name" placeholder="Club Name" />
+        <div class="error text-danger small" *ngIf="clubForm.get('name')?.invalid && clubForm.get('name')?.touched">Name is required.</div>
+      </div>
+      <div class="col-md-4">
+        <label class="form-label">Description</label>
+        <input type="text" class="form-control" formControlName="description" placeholder="Description" />
+        <div class="error text-danger small" *ngIf="clubForm.get('description')?.invalid && clubForm.get('description')?.touched">Description is required.</div>
+      </div>
+      <div class="col-md-2">
+        <label class="form-label">Members</label>
+        <input type="number" class="form-control" formControlName="members" placeholder="Members" min="1" />
+        <div class="error text-danger small" *ngIf="clubForm.get('members')?.invalid && clubForm.get('members')?.touched">Members must be at least 1.</div>
+      </div>
+      <div class="col-md-2">
+        <label class="form-label">Logo</label>
+        <input type="file" class="form-control" accept="image/*" (change)="onLogoChange($event)" />
+      </div>
+      <div class="col-12 text-end mt-3">
+        <button type="submit" class="btn btn-primary px-4">
+          <span class="material-icons align-middle">add_circle</span> Add Club
+        </button>
+      </div>
+    </div>
+  </form>
+  <div class="row g-4">
+    @if (clubs.length === 0) {
+      <div class="col-12 text-center py-5">
+        <span class="material-icons display-1 text-muted mb-3">groups</span>
+        <h4 class="text-muted">No clubs found.</h4>
+      </div>
+    }
+    @for (club of clubs; track club.id) {
+      <div class="col-md-6 col-lg-4">
+        <div class="card club-item shadow-sm h-100">
+          <div class="card-body d-flex align-items-center">
+            @if (club.logo) {
+              <img class="club-logo me-3" [src]="club.logo" alt="Club Logo" />
+            }
+            <div class="flex-grow-1">
+              <h5 class="club-name mb-1">{{ club.name }}</h5>
+              <p class="club-desc mb-1"><span class="material-icons align-middle me-1">description</span> {{ club.description }}</p>
+              <p class="club-members mb-1"><span class="material-icons align-middle me-1">group</span> Members: {{ club.members }}</p>
+            </div>
+            <button class="btn btn-danger ms-3 club-delete" (click)="onDeleteClub(club.id)" title="Delete">
+              <span class="material-icons align-middle">delete</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+</section>

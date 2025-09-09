@@ -1,0 +1,14 @@
+    <div class="loader-wrapper" *ngIf="show">
+      <!-- If image is provided, spin it -->
+      <img *ngIf="image; else defaultSpinner"
+           [src]="image"
+           class="spin-image"
+           [style.width]="size"
+           [style.height]="size"
+           alt="Loading..." />
+
+      <!-- Default spinner -->
+      <ng-template #defaultSpinner>
+        <div class="spinner" [style.width]="size" [style.height]="size"></div>
+      </ng-template>
+    </div>

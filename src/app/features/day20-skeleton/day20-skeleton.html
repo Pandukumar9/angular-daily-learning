@@ -1,0 +1,19 @@
+   <h2 class="text-xl font-bold mb-4">Users</h2>
+
+    <!-- Loading state -->
+    <div *ngIf="loading(); else dataLoaded">
+      <div *ngFor="let i of [1,2,3,4]" class="mb-3">
+        <app-skeleton-loader width="60%" height="20px"></app-skeleton-loader>
+        <app-skeleton-loader width="40%" height="14px"></app-skeleton-loader>
+      </div>
+    </div>
+
+    <!-- Loaded data -->
+    <ng-template #dataLoaded>
+      <ul>
+        <li *ngFor="let user of users()">
+          <p class="font-semibold">{{ user.name }}</p>
+          <small class="text-gray-500">{{ user.email }}</small>
+        </li>
+      </ul>
+    </ng-template>

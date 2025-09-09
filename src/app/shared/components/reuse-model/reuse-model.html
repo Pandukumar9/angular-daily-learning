@@ -1,0 +1,27 @@
+<h2 mat-dialog-title class="dialog-title">
+  <mat-icon class="title-icon" color="primary">feedback</mat-icon>
+  {{ data.title }}
+</h2>
+
+<mat-dialog-content class="dialog-content">
+  <p class="description">{{ data.description }}</p>
+
+  <div *ngIf="data.image" class="img-box">
+    <img [src]="data.image" alt="dialog image" />
+  </div>
+
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-label>Comments</mat-label>
+    <textarea matInput [(ngModel)]="comments" rows="4"></textarea>
+  </mat-form-field>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end" class="dialog-actions">
+  <button mat-stroked-button color="warn" (click)="onCancel()">
+    <mat-icon>close</mat-icon>&nbsp;Cancel
+  </button>
+  <button mat-raised-button color="primary" (click)="onSave()">
+    <mat-icon>save</mat-icon>&nbsp;Save
+  </button>
+</mat-dialog-actions>
+

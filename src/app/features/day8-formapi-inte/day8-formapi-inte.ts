@@ -27,7 +27,7 @@ userForm: FormGroup;
   }
 
 loadUsers() {
-  this.userService.getUsers().subscribe({
+  this.userService.getUsersdata().subscribe({
     next: (res) => {
       this.users = res;
       console.log('Users fetched:', this.users);
@@ -40,7 +40,7 @@ loadUsers() {
 
   onSubmit() {
     if (this.userForm.valid) {
-      this.userService.addUser(this.userForm.value).subscribe(() => {
+      this.userService.addUserdata(this.userForm.value).subscribe(() => {
         alert('User added successfully');
         this.loadUsers(); // refresh list
         this.userForm.reset();

@@ -1,3 +1,4 @@
+import { Day19UsersComponent } from './features/day19-users/day19-users';
 import { Routes } from '@angular/router';
 
 export const routes: Routes = [
@@ -6,6 +7,11 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./features/day1-reactive-form/day1-reactive-form')
         .then(m => m.Day1ReactiveForm),
+  },
+  {
+    path: 'day19-users',
+    loadComponent: () =>
+      import('./features/day19-users/day19-users').then(m => m.Day19UsersComponent),
   },
   // You can uncomment and add more later
   {
@@ -103,6 +109,30 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./features/day17-multifile-upload/day17-multifile-upload')
         .then(m => m.Day17MultifileUpload),
+  },
+  {
+    path: 'day18',
+    loadComponent: () =>
+      import('./features/day18-department/day-18-department')
+        .then(m => m.Day18Department),
+  },
+    {
+    path: '2day20',
+    loadComponent: () =>
+      import('./features/day20-skeleton/day20-skeleton')
+        .then(m => m.Day20Skeleton),
+  },
+      {
+    path: 'day22',
+    loadComponent: () =>
+      import('./features/day22-spin-load-test/day22-spin-load-test')
+        .then(m => m.Day22SpinLoadTest),
+  },
+        {
+    path: 'day23',
+    loadComponent: () =>
+      import('./features/day23-reuse-model-test/day23-reuse-model-test')
+        .then(m => m.Day23ReuseModelTest),
   },
   { path: '', redirectTo: 'day1', pathMatch: 'full' },
 ];

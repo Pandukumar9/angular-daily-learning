@@ -1,0 +1,16 @@
+    <section>
+      <h2>Department</h2>
+      <form (submit)="onAddDepartment()" style="margin-bottom: 1rem;">
+        <input type="text" [value]="name()" (input)="name.set($event.target.value)" placeholder="Name" required />
+        <input type="text" [value]="location()" (input)="location.set($event.target.value)" placeholder="Location" required />
+        <button type="submit">Add Department</button>
+      </form>
+      <ul>
+        @for (dept of departments(); track dept.id) {
+          <li>
+            {{ dept.name }} ({{ dept.location }})
+            <button (click)="onDeleteDepartment(dept.id)">Delete</button>
+          </li>
+        }
+      </ul>
+    </section>

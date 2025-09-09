@@ -1,0 +1,9 @@
+    <h2 class="text-xl font-bold mb-4">Products</h2>
+
+    <app-spin-loader [show]="loading()" size="60px"></app-spin-loader>
+
+    <ul *ngIf="!loading()">
+      <li *ngFor="let p of products()" class="mb-2">
+        {{ p }}
+      </li>
+    </ul>
